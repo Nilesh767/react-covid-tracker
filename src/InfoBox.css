@@ -1,6 +1,7 @@
 .infoBox {
   flex: 1;
   cursor: pointer;
+  text-align: center;
 }
 
 .infoBox:not(:last-child) {
@@ -12,7 +13,7 @@
 }
 
 .infoBox--red {
-  border-color: red;
+  border-color: rgb(236, 88, 88);
 }
 
 .infoBox__cases--green {
@@ -29,6 +30,6 @@
 .infoBox__total {
   color: #6c757d;
   font-weight: 700 !important;
-  font-size: 0.8rem !important;
+  font-size: 1rem !important;
   margin-top: 15px !important;
 }
