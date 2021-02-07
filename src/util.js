@@ -8,7 +8,7 @@ export const sortData = (data) => {
 };
 
 export const prettyPrintStat = (stat) =>
-  stat ? `+${numeral(stat).format("0,0")}` : "+0";
+  stat ? `${numeral(stat).format("0.0a")}` : "+0";
 
 const casesTypeColors = {
   cases: {
@@ -20,8 +20,7 @@ const casesTypeColors = {
     option: { color: "#7dd71d", fillColor: "#7dd71d" },
   },
   deaths: {
-    multiplier: 1500
-    ,
+    multiplier: 1500,
     option: { color: "#800000", fillColor: "#800000" },
   },
 };
@@ -45,13 +44,13 @@ export const showDataOnMap = (data, casesType = "cases") => {
           ></div>
           <div className="info-name">{country.country}</div>
           <div className="info-confirmed">
-            Cases: {numeral(country.cases).format("0,0")}
+            Cases: {numeral(country.cases).format("0.0a")}
           </div>
           <div className="info-recovered">
-            Recovered: {numeral(country.recovered).format("0,0")}
+            Recovered: {numeral(country.recovered).format("0.0a")}
           </div>
           <div className="info-deaths">
-            Deaths: {numeral(country.deaths).format("0,0")}
+            Deaths: {numeral(country.deaths).format("0.0a")}
           </div>
         </div>
       </Popup>
