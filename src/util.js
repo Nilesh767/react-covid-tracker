@@ -12,25 +12,26 @@ export const prettyPrintStat = (stat) =>
 
 const casesTypeColors = {
   cases: {
-    multiplier: 800,
+    multiplier: 200,
     option: { color: "#fb4443", fillColor: "#fb4443" },
   },
   recovered: {
-    multiplier: 1200,
+    multiplier: 200,
     option: { color: "#7dd71d", fillColor: "#7dd71d" },
   },
   deaths: {
-    multiplier: 2000,
+    multiplier: 1500
+    ,
     option: { color: "#800000", fillColor: "#800000" },
   },
 };
 
-export const showDataOnMap = (data, casesType) => {
-  data.map((country, i) => (
+export const showDataOnMap = (data, casesType = "cases") => {
+  return data.map((country, i) => (
     <Circle
       key={i}
       center={[country.countryInfo.lat, country.countryInfo.long]}
-      fillOpacity={0.4}
+      fillOpacity={0.2}
       pathOptions={casesTypeColors[casesType].option}
       radius={
         Math.sqrt(country[casesType]) * casesTypeColors[casesType].multiplier
@@ -41,7 +42,7 @@ export const showDataOnMap = (data, casesType) => {
           <div
             className="info-flag"
             style={{ backgroundImage: `url(${country.countryInfo.flag})` }}
-          />
+          ></div>
           <div className="info-name">{country.country}</div>
           <div className="info-confirmed">
             Cases: {numeral(country.cases).format("0,0")}
