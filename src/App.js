@@ -19,7 +19,7 @@ import { prettyPrintStat, sortData } from "./util";
 
 const App = () => {
   const [countries, setCountries] = useState([]);
-  const [country, setCountry] = useState("WorldWide");
+  const [country, setCountry] = useState("worldwide");
   const [countryInfo, setCountryInfo] = useState({});
   const [tableData, setTableData] = useState([]);
   const [mapCenter, setMapCenter] = useState({ lat: 34.80746, lng: -40.4796 });
@@ -84,8 +84,8 @@ const App = () => {
               value={country}
               onChange={onChangeCountry}
             >
-              <MenuItem value="worldwide" selected>
-                Worldwide
+              <MenuItem value="worldwide" defaultValue>
+                Global
               </MenuItem>
               {countries.map((country, i) => (
                 <MenuItem key={i} value={country.value}>
